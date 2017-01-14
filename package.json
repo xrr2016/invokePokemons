@@ -6,11 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack -p --progress --hide-modules --color",
-    "start": "http-server dist"
+    "start": "http-server"
   },
   "author": "xrr2016",
   "license": "MIT",
   "dependencies": {
     "pokemon-gif": "^1.0.9"
+  },
+  "devDependencies": {
+    "css-loader": "^0.26.1",
+    "style-loader": "^0.13.1"
   }
 }

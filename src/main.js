@@ -1,4 +1,5 @@
 import pokemonGif from 'pokemon-gif'
+import './style.css'
 
 let clicked = false
 

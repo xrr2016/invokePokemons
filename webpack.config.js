@@ -1,26 +1,24 @@
 const path = require('path')
 const webpack = require('webpack')
 
-const ROOT_PATH = path.resolve(__dirname)
-const SRC_PATH = path.resolve(ROOT_PATH, 'src')
-const DIST_PATH = path.resolve(ROOT_PATH, 'dist')
-const MODULE_PATH = path.resolve(ROOT_PATH, 'node_modules')
-
 const config = {
-    entry: {
-        'main': path.resolve(SRC_PATH, 'main'),
-    },
+    entry: './src/main.js',
     output: {
-        path: DIST_PATH,
+        path: './dist/',
         filename: 'build.js',
         publicPath: '/'
     },
     module: {
-        loaders: [{
+        loaders: [
+          {
             test: /\.js$/,
-            loader: 'babel',
-            include: [SRC_PATH]
-        }]
+            loader: 'babel'
+          },
+          {
+            test:/\.css$/,
+            loader:'style-loader!css-loader'
+          }
+      ]
     },
     resolve: {
         modulesDirectories: [
@@ -28,7 +26,7 @@ const config = {
             'src'
         ],
         alias: {
-            'pokemon-gif': path.resolve(MODULE_PATH, 'pokemon-gif', 'lib', 'pokemon-gif.js')
+            'pokemon-gif': path.resolve('node_modules', 'pokemon-gif', 'lib', 'pokemon-gif.js')
         }
     },
     plugins: [
