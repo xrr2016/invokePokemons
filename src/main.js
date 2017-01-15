@@ -10,7 +10,7 @@ function showPokemon() {
   document.querySelector('.box').appendChild(gif)
 }
 
-const button = document.querySelector('.button')
+const button = document.querySelector('#invoke')
 button.addEventListener('click',() => {
     clicked = !clicked
     clicked ? showPokemon() : null

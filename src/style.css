@@ -10,17 +10,18 @@ html, body {
 body {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items:flex-end;
     background-color: whitesmoke;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 .box{
   width: 50%;
   height: 50%;
+  margin-top: 120px;
   border-radius: 50%;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
 }
-.buttton {
+.btn{
     outline: none;
     border: none;
     border-radius: 2px;
