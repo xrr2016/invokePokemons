@@ -4,13 +4,13 @@ RUN apt-get update \
 
 WORKDIR /app
 
-COPY . /app
+COPY . /app/
 
 EXPOSE 80
 
 RUN yarn \
     && yarn build \
-    && cp -r dist/**/* /var/www/html \
+    && cp -r dist/* /usr/share/nginx/html \
     && rm -rf /app
 
 CMD ["nginx", "-g", "daemon off;"]    
