@@ -1,6 +1,8 @@
 FROM node:slim
+MAINTAINER xiaoranran
 RUN apt-get update \
     && apt-get install -y nginx
+    && apt-get purge -y --auto-remove
 
 WORKDIR /app
 
