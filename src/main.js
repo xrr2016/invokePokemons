@@ -1,18 +1,13 @@
-import pokemonGif from 'pokemon-gif'
-import './style.css'
+import Vue from "vue";
+import App from "./App.vue";
+import router from "./router";
+import store from "./store";
+import "./registerServiceWorker";
 
-let clicked = false
+Vue.config.productionTip = false;
 
-function showPokemon() {
-  const index = Math.round(Math.random() * 721)
-  const gif = document.createElement('img')
-  gif.setAttribute('src', pokemonGif(index))
-  document.querySelector('.box').appendChild(gif)
-}
-
-const button = document.querySelector('#invoke')
-
-button.addEventListener('click',() => {
-    clicked = !clicked
-    clicked ? showPokemon() : null
-})
+new Vue({
+  router,
+  store,
+  render: h => h(App)
+}).$mount("#app");
